@@ -1,0 +1,45 @@
+{
+	"CHICKEN": [
+		{
+		   "price": "4.99",
+		   "title": "spicy bliss taco"
+		},
+		{
+			"price": "2.99",
+			"title": "chicken vegetables taco"
+		},
+		{
+			"price": "6.99",
+			"title": "gordita chicken taco"
+		}
+	],
+	"BEEF": [
+		{
+			"price": "6.99",
+			"title": "spicy beef taco"
+		},
+		{
+			"price": "4.59",
+			"title": "beef vegetables taco"
+		},
+		{
+			"price": "7.99",
+			"title": "gordita beef taco combo"
+		}
+	],
+	"VEGETARIAN": [
+		{
+			"price": "3.99",
+			"title": "spicy vegetarian taco"
+		},
+		{
+			"price": "4.89",
+			"title": "vegetable Meadley taco"
+		},
+		{
+			"price": "7.99",
+			"title": "Jalapeno y chile taco wrap"
+		}
+	]
+
+}
