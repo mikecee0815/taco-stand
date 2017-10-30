@@ -1,0 +1,30 @@
+ul li{
+	list-style: none;
+}
+
+.menu-selections a{
+	text-decoration: none;
+}
+
+#menu-display ul{
+	padding-left: 0;
+}
+#menu-display a{
+	text-decoration: none;
+}
+.menu-details__img img{
+	/*width:85%;*/
+}
+a.current{
+	color: #912888;
+	font-size: 1.3em;
+	
+}
+ .fa-arrow-circle-left{
+	color: red;
+}
+.taco-icon img{
+	max-width: 30%;
+
+}
+
