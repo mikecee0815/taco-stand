@@ -33,7 +33,7 @@ $(function() {
       newContent += menus[menu][i].title.replace(/ /g, '-') + ' ">';
       newContent += menus[menu][i].title + ' </a></li>';
 }
-      $('#menu-display').html('<ul class="ul-list">' + newContent + '</ul>');
+      $('#menu-display').html('<ul class="ul-list">' + newContent + '</ul>').hide().fadeIn('slow'); 
     });
     
     // console.log(newContent);
@@ -47,9 +47,18 @@ $(function() {
        $('#menu-details').load(selection).hide().fadeIn('slow'); 
        // $('#menu-display a.current').removeClass('current'); 
        // $(this).addClass('current');                                              // Update selected item
-      
-  // });
-
 });
+
+  // CLICK ON PRIMARY NAVIGATION
+  $('nav a').on('click', function(e) {                       // Click on nav
+    e.preventDefault();                                      // Prevent loading
+    var url = this.href;                                     // Get URL to load
+
+    $('nav a.current').removeClass('current');               // Update nav
+    $(this).addClass('current');
+
+    $('#main-container').remove();                                // child Remove old part
+    $('#main').load(url + ' #main-container').hide().fadeIn('slow'); // parent Add new
+  });
 	
 });
