@@ -1,6 +1,6 @@
 $(function() {
 
-var menus;                                      // Declare global variable
+  var menu;                                                 // Declare global variable
   $.ajax({
     beforeSend: function(xhr) {                   // Before requesting data
       if (xhr.overrideMimeType) {                 // If supported
@@ -8,6 +8,7 @@ var menus;                                      // Declare global variable
       }
     }
   });
+                                     
 
   function loadMenu() {                    // Declare function
     $.getJSON('data/menus.json')              // Try to get JSON data
@@ -20,39 +21,35 @@ var menus;                                      // Declare global variable
 
   loadMenu();
 
-  $('#main').on('click', 'a', function(e){
+
+  $('#main').on('click', 'li a', function(e){
     e.preventDefault()
-    var menuId = this.id.toUpperCase(); // Get value of id attr 
+    var menu = this.id.toUpperCase(); // Get value of id attr 
     var newContent="";
-    for (var i = 0; i < menus[menuId].length; i++) {      // looping through menu
+    for (var i = 0; i < menus[menu].length;  i++) {     // looping through menu
       // newContent+='<span>' + menus[menu][i].price + '</span>';
       newContent+= '<li class="list-item my-2">';
-      newContent += '<a class="mr-4 mt-3 text-capitalize " href="details.html#';
-      newContent += menus[menuId][i].title.replace(/ /g, '-') + ' ">';
-      newContent += menus[menuId][i].title + ' </a></li>';
+      newContent += '<a class="mr-4 mt-3 text-capitalize" href="details.html#';
+      newContent += menus[menu][i].title.replace(/ /g, '-') + ' ">';
+      newContent += menus[menu][i].title + ' </a></li>';
 }
       $('#menu-display').html('<ul class="ul-list">' + newContent + '</ul>');
+    });
     
-    // console.log(menuId);
+    // console.log(newContent);
 
+    // CLICK TO GET DETAILS FOR EACH SELECTION
+  $('#menu-display').on('click','li a', function(e){
+      e.preventDefault();
+      var selection= this.href;
+      console.log(selection);
+      selection = selection.replace('#', ' #');
+       $('#menu-details').load(selection).hide().fadeIn('slow'); 
+       // $('#menu-display a.current').removeClass('current'); 
+       // $(this).addClass('current');                                              // Update selected item
+      
+  // });
 
-  });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+});
 	
 });
