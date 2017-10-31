@@ -22,7 +22,7 @@ $(function() {
   loadMenu();
 
 
-  $('#main').on('click', 'li a', function(e){
+  $('#main').on('click', '#menu-set a', function(e){
     e.preventDefault()
     var menu = this.id.toUpperCase(); // Get value of id attr 
     var newContent="";
